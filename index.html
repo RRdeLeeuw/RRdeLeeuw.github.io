@@ -1,8 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<header>
-    <title> This is my GitHub Pages website! </title>
-</header>
-<body>
-    <h1>This is my website!</h1>
-</body>
+<html lang="nl">
+    <head>
+        <script>
+            var countDownDate = new Date("2020-12-01T00:00:00+01:00");
+
+            var myfunc = setInterval(function() {
+                var now = new Date().getTime();
+                var timeleft = countDownDate - now;
+                    
+                var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days
+                document.getElementById("hours").innerHTML = hours
+                document.getElementById("mins").innerHTML = minutes
+                document.getElementById("secs").innerHTML = seconds
+            }, 1000)
+        </script>
+        <style>
+            p {
+                display: inline;
+                font-size: 30px;
+            }
+            body {
+                font-size: 30px;
+            }
+        </style>
+        <title>Countdown naar verhuizing</title>
+    </head>
+    <body>
+        Het duurt nog <p id="days"></p> dagen, <p id="hours"></p> uur, <p id="mins"></p> minuten en <p id="secs"></p> seconden tot 1 december!
+    </body>
+</html>
