@@ -4,24 +4,28 @@ p {
 
 body {
   font-size: 30px;
+  text-align: center;
 }
 
 .container {
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .box {
   display: flex;
-  color: red;
+  text-align: center;
+  color: chocolate;
   text-align: center;
   height: 300px;
-  width: 50%;
+  width: 30%;
   align-items: center;
   word-wrap: break-word;
-  border: chocolate solid 2px;
+  overflow: auto;
+  flex-basis: 1;
 }
 
 /*# sourceMappingURL=styles.css.map */
