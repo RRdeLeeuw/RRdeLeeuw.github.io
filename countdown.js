@@ -10,9 +10,4 @@ var myfunc = setInterval(function() {
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     document.querySelector("#countdown").innerHTML = `Het duurt nog: ${days}&nbsp;dagen, ${hours}&nbsp;uur, ${minutes}&nbsp;minuten en ${seconds}&nbsp;seconden tot 1&nbsp;december!`
-
-  //  document.getElementById("days").innerHTML = days
-  //  document.getElementById("hours").innerHTML = hours
-  //  document.getElementById("mins").innerHTML = minutes
-  //  document.getElementById("secs").innerHTML = seconds
 }, 1000)

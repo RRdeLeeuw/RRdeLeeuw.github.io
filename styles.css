@@ -1,7 +1,8 @@
 body {
-  font-size: 5vh;
+  font-size: 5vw;
   font-size: 3vmax;
   text-align: center;
+  background-color: aliceblue;
 }
 
 .container {
@@ -16,15 +17,19 @@ body {
 .box {
   display: flex;
   text-align: center;
-  color: chocolate;
+  color: rgb(255, 255, 255);
   text-align: center;
-  height: 300px;
-  width: 30%;
+  height: 25vw;
+  width: 25vw;
   align-items: center;
   word-wrap: break-word;
   overflow: auto;
   flex-basis: 1;
   overflow: hidden;
+  border: solid rgb(0, 61, 117) 0.3vh;
+  border-radius: 50%;
+  padding: 5%;
+  background-color: rgb(0, 61, 117);
 }
 
 /*# sourceMappingURL=styles.css.map */
