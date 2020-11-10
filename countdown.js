@@ -9,5 +9,5 @@ var myfunc = setInterval(function() {
     var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
-    document.querySelector("#countdown").innerHTML = `Het duurt nog: ${days}&nbsp;dagen, ${hours}&nbsp;uur, ${minutes}&nbsp;minuten en ${seconds}&nbsp;seconden tot 1&nbsp;december!`
+    document.querySelector("#countdown").innerHTML = `Het&nbsp;duurt&nbsp;nog: ${days}&nbsp;dagen,&nbsp;${hours}&nbsp;uur, ${minutes}&nbsp;minuten&nbsp;en ${seconds}&nbsp;seconden&nbsp;tot 1&nbsp;december!`
 }, 1000)
