@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!------ JAVASCRIPT REQUIRES THE INCLUSION OF LUXON LIBRARY    
+             MAKE SURE TO VISIT https://moment.github.io/luxon/index.html!
+             LUXON FILES NOT INCLUDED HERE, ALL CREDITS TO IT'S CREATORS.   ----->
+    <script src="luxon.js"></script>
+    <!----   LUXON        ----->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <!------- File inclusions, files can be found in repository.  ---->
+    <link rel="stylesheet" href="styles.css">
+    <script src="luxon.js"></script>
+
+</head>
+
+<body>
+    <p> Welcome on the calendar page. </p>
+    <div class="select flex" id="selectdiv">
+        <div><select class="selector" id="monthselector" onchange="setMonth(this.value)"></select></div>
+        <div><select class="selector" id="yearselector" onchange="setYear(this.value)"></select></div>
+    </div>
+    <div class='wrapper' id='wrapper'>
+        <div class="header">
+            <div class='dayheader'>Monday</div>
+            <div class='dayheader'>Tuesday</div>
+            <div class='dayheader'>Wednesday</div>
+            <div class='dayheader'>Thursday</div>
+            <div class='dayheader'>Friday</div>
+            <div class='dayheader'>Saturday</div>
+            <div class='dayheader'>Sunday</div>
+        </div>
+        <div class='days' id='days'>
+            <!------ dayboxes will be inserted here by JS    ------>
+        </div>
+    </div>
+</body>
+
+</html>
