@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" href="stylesheets/calendar.css">
     <title>Robin de Leeuw</title>
+    <script src="scripts/luxon.js"></script>
+    <script src="scripts/javascript.js"></script>
 </head>
 
 <body>
@@ -29,14 +31,23 @@
     </nav>
     <main>
 
-        <section>
-
-            <h2> Welcome on the index page. </h2>
-            <p>There no content for this page yet. Please enjoy this picture..</p>
-            <div class="center">
-                <img class="panorama" src="images/pano.jpg" alt="Picture of Stokksnes in Iceland.">
+        <section class="calendar">
+            <div class="selectors">
+                <select class="selector" id="monthselector" onchange="setMonth(this.value)"></select>
+                <select class="selector" id="yearselector" onchange="setYear(this.value)"></select>
             </div>
-
+            <div class="header">
+                <div class='dayheader'>Monday</div>
+                <div class='dayheader'>Tuesday</div>
+                <div class='dayheader'>Wednesday</div>
+                <div class='dayheader'>Thursday</div>
+                <div class='dayheader'>Friday</div>
+                <div class='dayheader'>Saturday</div>
+                <div class='dayheader'>Sunday</div>
+            </div>
+            <div class='days' id='days'>
+                <!------ boxes will be inserted here by JS    ------>
+            </div>
         </section>
 
     </main>
