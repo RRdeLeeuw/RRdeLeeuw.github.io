@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/calendar.css">
+    <title>Robin de Leeuw</title>
+</head>
+
+<body>
+    <header>
+        <h1>Robin/DeLeeuw</h1>
+        <span>
+            <a href="/index.html">Login</a>
+        </span>
+        <img src="/images/leo.svg" alt="">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="addevent.html">Add&nbsp;event</a></li>
+            <li><a href="todolist.html">To-do&nbsp;List</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section>
+
+            <div class='addeventform'>
+                <form action="" method="POST">
+                    <table>
+                        <tr>
+                            <td> Select date: </td>
+                            <td> <input type="date" name="date" class="input" required id="id_date" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Select time (hh:mm AM): </td>
+                            <td> <input type="time"></td>
+                        </tr>
+                        <tr>
+                            <td> Enter a title: </td>
+                            <td> <input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td id="textlabeltag">Enter a description:</td>
+                            <td><textarea cols="40" rows="10"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="submit">
+                                <button>Submit</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <section>
+            <h2> </h2>
+            <a href="/credits.html">Credits</a>
+        </section>
+    </footer>
+
+</body>
+
+</html>
