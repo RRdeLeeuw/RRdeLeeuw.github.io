@@ -2,38 +2,57 @@
 <html lang="en">
 
 <head>
-
-    <!------  https://moment.github.io/luxon/index.html   ----->
-    <script src="luxon.js"></script>
-    <!----   LUXON  ----->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="calendar.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&family=Ubuntu:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="stylesheets/calendar.css">
+    <title>Robin de Leeuw</title>
 </head>
 
 <body>
-    <p> Welcome on the calendar page. </p>
-    <div class="select flex" id="selectdiv">
-        <div><select class="selector" id="monthselector" onchange="setMonth(this.value)"></select></div>
-        <div><select class="selector" id="yearselector" onchange="setYear(this.value)"></select></div>
-    </div>
-    <div class='wrapper' id='wrapper'>
-        <div class="header">
-            <div class='dayheader'>Monday</div>
-            <div class='dayheader'>Tuesday</div>
-            <div class='dayheader'>Wednesday</div>
-            <div class='dayheader'>Thursday</div>
-            <div class='dayheader'>Friday</div>
-            <div class='dayheader'>Saturday</div>
-            <div class='dayheader'>Sunday</div>
-        </div>
-        <div class='days' id='days'>
-        </div>
-    </div>
+    <header>
+        <h1>Robin/DeLeeuw</h1>
+        <span>
+            <a href="/login.html">Login</a>
+        </span>
+        <img src="/images/leo.svg" alt="">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index2.html">Home</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li><a href="">Add&nbsp;event</a></li>
+            <li><a href="">To-do&nbsp;List</a></li>
+        </ul>
+    </nav>
+    <main>
+
+        <section>
+
+            <h2> Welcome on my GitHub page. </h2>
+            <p>This page is still under construction. Many parts are not finished and therefore not yet functional.
+                Large parts of this website require more functionality than github pages offers, for example the use of
+                a database and a user login system. This website is therefore only for demonstration.</p>
+            <p>
+                I intend to use this page to showcase a few projects I am working on.
+            </p>
+            <div class="center">
+                <img class="panorama" src="images/pano.jpg" alt="Picture of Stokksnes in Iceland.">
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <section>
+            <h2> </h2>
+            <a href="/credits.html">Credits</a>
+        </section>
+    </footer>
+
 </body>
 
 </html>
