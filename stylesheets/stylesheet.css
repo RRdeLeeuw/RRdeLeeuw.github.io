@@ -84,12 +84,12 @@ nav .hamburger-button {
 nav .menu {
   display: block;
   height: 2em;
-  overflow: hidden;
 }
 @media screen and (max-width: 700px) {
   nav .menu {
     display: block;
     height: 1.1em;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 700px) {
@@ -97,6 +97,7 @@ nav .menu {
     display: inline-block;
     height: 0em;
     padding-left: 1em;
+    overflow: hidden;
   }
   nav .menu.hidden ul {
     padding-top: 0;
@@ -108,6 +109,7 @@ nav .menu {
     display: inline-block;
     height: 0em;
     padding-left: 1em;
+    overflow: hidden;
   }
   nav .menu.visible ul {
     padding-top: 0;
