@@ -51,7 +51,7 @@ main section.calendar {
             padding-right: 5px;
             padding-top: 2px;
             padding-bottom: 3px;
-            min-width: 85px;
+            // min-width: 85px;
         }
     }
     .days {
@@ -61,7 +61,31 @@ main section.calendar {
         grid-auto-rows: minmax(75px, auto);
         grid-gap: 0.4em;
         >div {
-            min-width: 95px;
+            overflow: hidden;
+            &:nth-of-type(7n) {
+                min-width: 60px;
+            }
+            &:nth-of-type(7n-1) {
+                min-width: 70.16px;
+            }
+            &:nth-of-type(7n-2) {
+                min-width: 50.7px;
+            }
+            &:nth-of-type(7n-3) {
+                min-width: 73.5px;
+            }
+            &:nth-of-type(7n-4) {
+                min-width: 89.3px;
+            }
+            &:nth-of-type(7n-5) {
+                min-width: 66.9px;
+            }
+            &:nth-of-type(7n-6) {
+                min-width: 64.5px;
+            }
+            // @media screen and (min-width: 700px) {
+            //     min-width: 95px;
+            // }
         }
         >.currentmonth {
             background-color: rgb(255, 255, 255);

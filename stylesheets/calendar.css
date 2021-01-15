@@ -48,7 +48,6 @@ main section.calendar .header div {
   padding-right: 5px;
   padding-top: 2px;
   padding-bottom: 3px;
-  min-width: 85px;
 }
 main section.calendar .days {
   display: grid;
@@ -58,7 +57,28 @@ main section.calendar .days {
   grid-gap: 0.4em;
 }
 main section.calendar .days > div {
-  min-width: 95px;
+  overflow: hidden;
+}
+main section.calendar .days > div:nth-of-type(7n) {
+  min-width: 60px;
+}
+main section.calendar .days > div:nth-of-type(7n-1) {
+  min-width: 70.16px;
+}
+main section.calendar .days > div:nth-of-type(7n-2) {
+  min-width: 50.7px;
+}
+main section.calendar .days > div:nth-of-type(7n-3) {
+  min-width: 73.5px;
+}
+main section.calendar .days > div:nth-of-type(7n-4) {
+  min-width: 89.3px;
+}
+main section.calendar .days > div:nth-of-type(7n-5) {
+  min-width: 66.9px;
+}
+main section.calendar .days > div:nth-of-type(7n-6) {
+  min-width: 64.5px;
 }
 main section.calendar .days > .currentmonth {
   background-color: white;

@@ -11,6 +11,7 @@
     <title>Robin de Leeuw</title>
     <script src="scripts/luxon.js"></script>
     <script src="scripts/javascript.js"></script>
+    <script src="scripts/layout.js"></script>
 </head>
 
 <body>
@@ -22,23 +23,33 @@
         <img src="/images/leo.svg" alt="">
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
-            <li><a href="addevent.html">Add&nbsp;event</a></li>
-            <li><a href="todolist.html">To-do&nbsp;List</a></li>
-        </ul>
+        <div id="hamburger-button" class="hamburger-button">
+            Show menu
+        </div>
+        <div id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="addevent.html">Add&nbsp;event</a></li>
+                <li><a href="todolist.html">To-do&nbsp;List</a></li>
+                <span>
+                    <li><a href="/index.html">Login</a></li>
+                </span>
+            </ul>
+        </div>
     </nav>
-    <main>
 
+
+    <main>
+        <section>
+            <p>This is the calendar made from scratch for this project. It is rendered by javascript and adjusts
+                automatically for each month selected. All the days are clickable to create new events and once an event
+                is
+                created this is also clickable. Clicking on a day will take you to the add event page, automatically
+                inserting the date for you. To make handling dates in javascript a little easier I made us of the open
+                source <a href="https://moment.github.io/luxon/">Luxon</a> library.</p>
+        </section>
         <section class="calendar">
-            <div class="center">
-                <p>
-                    Please note that this calendar is not fully functional. The database behind it is not functional on
-                    Github pages. Therefore no events can be added. It is just a demonstration of the calendar rendering
-                    Javascript.
-                </p>
-            </div>
             <div class="selectors">
                 <select class="selector" id="monthselector" onchange="setMonth(this.value)"></select>
                 <select class="selector" id="yearselector" onchange="setYear(this.value)"></select>
@@ -56,7 +67,6 @@
                 <!------ boxes will be inserted here by JS    ------>
             </div>
         </section>
-
     </main>
 
     <footer>

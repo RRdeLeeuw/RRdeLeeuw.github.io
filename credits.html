@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" href="stylesheets/calendar.css">
     <title>Robin de Leeuw</title>
+    <script src="scripts/layout.js"></script>
 </head>
 
 <body>
@@ -20,13 +21,22 @@
         <img src="/images/leo.svg" alt="">
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="calendar.html">Calendar</a></li>
-            <li><a href="addevent.html">Add&nbsp;event</a></li>
-            <li><a href="todolist.html">To-do&nbsp;List</a></li>
-        </ul>
+        <div id="hamburger-button" class="hamburger-button">
+            Show menu
+        </div>
+        <div id="menu" class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="addevent.html">Add&nbsp;event</a></li>
+                <li><a href="todolist.html">To-do&nbsp;List</a></li>
+                <span>
+                    <li><a href="/index.html">Login</a></li>
+                </span>
+            </ul>
+        </div>
     </nav>
+
     <main>
 
         <section>

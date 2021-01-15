@@ -1,20 +1,32 @@
 //Variables
 $HR-line-color: #f1f1f1;
-$button-color-darkgray: rgb(70,70,70);
+$button-color-darkgray: rgb(60, 60, 60);
 $color-darkgray: rgb(70,70,70);
 $button-color-red: rgb(187, 0, 0);
 
 body {
     width: 80%;
     margin: 0 auto;
+    @media screen and (max-width: 700px) {
+        width: 100%;
+    }
 }
 
 header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: white;
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    padding-top: 0.5em;
     border-bottom: 2px solid $HR-line-color;
     align-items: center;
+    margin-bottom: 0;
+    @media screen and (max-width: 700px) {
+        width: 90%;
+        margin: 0 auto;
+    }
     h1 {
         text-transform: uppercase;
         font-size: 1.5em;
@@ -25,12 +37,18 @@ header {
         width: 80%;
     }
     span {
+        @media screen and (max-width: 700px) {
+            display: none;
+        }
     }
     a {
         color: rgb(30, 30, 30);
         text-decoration: none;
         font-family: Roboto, sans-serif;
         font-weight: 100;
+        &:nth-of-type(2) {
+            margin-left: 2em;
+        }
     }
     img {
         display: inline;
@@ -40,14 +58,68 @@ header {
 
 
 nav {
+    position: sticky;
+    z-index: 1;
+    top: 4.05em;
+    background-color: white;
     font-family: Ubuntu, sans-serif;
     font-weight: 300;
     font-size: 1.1em;
     letter-spacing: 0.1em;
+    padding-bottom: 0.2em;
+    @media screen and (max-width: 700px) {
+        padding-bottom: 0;
+    }
+    .hamburger-button {
+        display: none;
+        @media screen and (max-width: 700px) {
+            display: inline-block;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 2px;
+        }
+    }
+    .menu {
+        display: block;
+        height: 2em;
+        @media screen and (max-width: 700px) {
+            display: block;
+            height: 1.1em;
+        }
+        overflow: hidden;
+    }
+
+@media screen and (max-width: 700px) {
+    .menu.hidden {
+        display: inline-block;
+        height: 0em;
+        padding-left: 1em;
+        ul {
+            padding-top: 0;
+            li {
+                margin-top: 0;
+            }
+        }
+    }
+    .menu.visible {
+        display: inline-block;
+        height: 0em;
+        padding-left: 1em;
+        ul {
+            padding-top: 0;
+            li {
+                margin-top: 0;
+            }
+        }
+    }
+}
     ul {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        margin-top: 0;
+        margin-bottom: 2px;
+        padding-top: 1em;
+        flex-wrap: nowrap;
         list-style-type: none;
         padding-left: 0px;
         a {
@@ -60,7 +132,7 @@ nav {
             &:first-child {
                 margin-left: 2em;
             }
-            &:last-child {
+            &:nth-of-type(4) {
                 margin-right: 2em;
             }
             &:hover {
@@ -83,6 +155,9 @@ nav {
                 background: rgb(99, 99, 99);
             }
         }
+        span {
+            display: none;
+        }
         @media screen and (max-width: 700px) {
             flex-direction: column;
             align-items: flex-start;
@@ -91,6 +166,9 @@ nav {
                 &:first-child {
                     margin-left: 0px;
                 }
+            }
+            span {
+                display: block;
             }    
         }
     }        
@@ -100,9 +178,19 @@ $border-thickness: 1.5;
 main {
     section {
         width: 90%;
-        margin: 3em auto 5em auto;
+        margin: 1.5em auto 5em auto;
         font-family: Roboto, sans-serif;
         font-weight: 100;
+        margin-bottom: 2em;
+        @media screen and (max-width: 700px) {
+            width: 90%;
+            margin-top: 0;
+        }
+        &.calendar {
+            @media screen and (max-width: 700px) {
+                width: 100%;
+            }
+        }
         a {
             color: rgb(0, 0, 0);
             font-weight: 300;
@@ -161,6 +249,7 @@ main {
             overflow: hidden;
             .todo-bullet, .todo-delete {
                 padding: 0 0.5em;
+                cursor: pointer;
                 input {
                     margin: 0;
                     transform: scale(1.5);
@@ -202,6 +291,9 @@ main {
                 input { 
                     border: none;
                     width: 100%;
+                    &:focus {
+                        outline: none;
+                    }
                 }
             }
         }
@@ -237,7 +329,18 @@ main {
             padding-left: 0.7em;
             padding-right: 0.5em;
             padding-top: 0.3em;
+            @media screen and (max-width: 700px) {
+                margin-top: 0;
+                padding-top: 0;
+            }
             padding-bottom: 0.3em;
+        }
+        form.register {
+            input {
+                display: block;
+                margin: 1em auto;
+                width: 30%;
+            }
         }
     }
 }
@@ -245,10 +348,15 @@ main {
 footer {
     section {
         width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
         margin: 3em auto 5em auto;
         font-family: Roboto, sans-serif;
         font-weight: 100;
-        text-align: right;
+        padding-top: 1em;
+        margin-top: 0;
+        border-top: $border-thickness*1px solid $HR-line-color;
         a {
             color: $color-darkgray;
             cursor: pointer;
@@ -358,4 +466,39 @@ $button-color-green: rgb(58, 58, 58);
     animation-fill-mode: forwards;
     animation-duration: 1s;
     animation-play-state: running;
+}
+
+@media screen and (max-width: 700px) {
+    @keyframes showmenu {
+        0% {
+            height: 0em;
+            opacity: 0;
+        }
+        100% {
+            height: 8.5em;
+            opacity: 1;
+        }
+    }
+    @keyframes hidemenu {
+        0% {
+            height: 8.5em;
+            opacity: 1;
+        }
+        100% {
+            height: 0em;
+            opacity: 0;
+        }
+    }
+    .visible {
+        animation-name: showmenu;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-play-state: running;
+    }
+    .hidden {
+        animation-name: hidemenu;
+        animation-fill-mode: forwards;
+        animation-duration: 1s;
+        animation-play-state: running;
+    }
 }
