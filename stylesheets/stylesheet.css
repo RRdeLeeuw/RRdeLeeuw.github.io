@@ -10,7 +10,6 @@ body {
 
 header {
   position: sticky;
-  z-index: 1;
   top: 0;
   background-color: white;
   display: flex;
@@ -56,7 +55,6 @@ header img {
 
 nav {
   position: sticky;
-  z-index: 1;
   top: 4.05em;
   background-color: white;
   font-family: Ubuntu, sans-serif;
@@ -494,6 +492,41 @@ footer section h2 {
     animation-duration: 1s;
     animation-play-state: running;
   }
+}
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.377);
+  z-index: 1 !important;
+}
+.popup.hidden {
+  display: none;
+}
+.popup > .content {
+  background-color: white;
+  height: 50vh;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 40px;
+}
+.popup > .content header {
+  text-align: right;
+  display: block;
+}
+.popup > .content section {
+  flex-grow: 1;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=stylesheet.css.map */
