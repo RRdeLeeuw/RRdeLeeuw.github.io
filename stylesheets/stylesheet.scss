@@ -90,7 +90,7 @@ nav {
     }
 
 @media screen and (max-width: 700px) {
-    .menu.hidden {
+    .menu {
         display: inline-block;
         height: 0em;
         padding-left: 1em;
@@ -102,18 +102,18 @@ nav {
             }
         }
     }
-    .menu.visible {
-        display: inline-block;
-        height: 0em;
-        padding-left: 1em;
-        overflow: hidden;
-        ul {
-            padding-top: 0;
-            li {
-                margin-top: 0;
-            }
-        }
-    }
+    // .menu.visible {
+    //     display: inline-block;
+    //     height: 0em;
+    //     padding-left: 1em;
+    //     overflow: hidden;
+    //     ul {
+    //         padding-top: 0;
+    //         li {
+    //             margin-top: 0;
+    //         }
+    //     }
+    // }
 }
     ul {
         display: flex;
@@ -542,3 +542,49 @@ $button-color-green: rgb(58, 58, 58);
         }
     }
 }
+
+
+// Tryout for dropdown menu from link
+@media screen and (min-width: 700px){
+    @keyframes showLinkMenu {
+        0% {
+            height: 0px;
+            opacity: 0;
+        }
+        100% {
+            height: 100px;
+            opacity: 1;
+        }
+    }
+    @keyframes hideLinkMenu {
+        0% {
+            height: 100px;
+            opacity: 1;
+        }
+        100% {
+            height: 0px;
+            opacity: 0;
+        }
+    }
+    #linkMenu {
+        position: absolute;
+        top: 15px;
+        background-color: purple;
+        width: 100px;
+        &.invisible {
+            animation-name: hideLinkMenu;
+            animation-fill-mode: forwards;
+            animation-duration: 0.3s;
+            animation-play-state: running;
+            overflow: hidden;
+        }
+        &.visible {
+            animation-name: showLinkMenu;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-play-state: running;
+        }
+    }
+}
+
+
