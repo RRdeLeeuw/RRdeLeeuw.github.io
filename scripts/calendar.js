@@ -60,6 +60,23 @@ function setYear(year) {
     renderCalendar();
 }
 
+// function addEvents(){
+//     const events = {
+//         "id": 0,
+//         "date": ,
+//         "time": self.date,
+//         "title": self.title,
+//         "text": self.text
+//     }
+//     var day = Number(event.date.slice(8));
+//     const element = document.createElement('div');
+//     element.setAttribute('class', 'calendar_event');
+//     element.innerHTML += event['title'];
+//     element.addEventListener('click', () => { view_event(event.id) });
+//     hover(element, 'calendarevent_hover');
+//     document.querySelector(`#day${day}`).append(element);
+// }
+
 // Function for rendering the calendar
 function renderCalendar() {
     // Define variables

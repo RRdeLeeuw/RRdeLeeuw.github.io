@@ -130,7 +130,7 @@ function deletetodo(todoid) {
     todorow.addEventListener("animationend", () => todorow.remove());
     let i = 0;
     for (let todo of todos) {
-        if (todo.todo_id === todoid) {
+        if (todo.todo_id === parseInt(todoid)) {
             todos.splice(i, 1);
         } else {
             i++;
