@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    document.querySelector('#projectsLink').addEventListener('mouseenter', function () {
-        document.querySelector('#linkMenu').classList.replace('invisible', 'visible');
-    });
-    document.querySelector('#projectsLink').addEventListener('mouseout', function () {
-        document.querySelector('#linkMenu').classList.replace('visible', 'invisible');
-    });
+    // document.querySelector('#projectsLink').addEventListener('mouseenter', function () {
+    //     document.querySelector('#linkMenu').classList.replace('invisible', 'visible');
+    // });
+    // document.querySelector('#projectsLink').addEventListener('mouseout', function () {
+    //     document.querySelector('#linkMenu').classList.replace('visible', 'invisible');
+    // });
 });
