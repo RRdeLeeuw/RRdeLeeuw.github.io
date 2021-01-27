@@ -7,22 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
 let length = 3;
 const todos = [{
     "todo_id": 0,
-    "todo": 'todo 1 todo text',
+    "todo": 'Wash the car',
     "checked": false
 },
 {
     "todo_id": 1,
-    "todo": 'todo 2 todo text',
+    "todo": 'Do grocery shopping',
     "checked": false
 },
 {
     "todo_id": 2,
-    "todo": 'todo 3 todo text',
+    "todo": 'Fix a (clientside) todo-list',
     "checked": true
 },
 {
     "todo_id": 3,
-    "todo": 'todo 4 todo text',
+    "todo": 'Try adding a new todo',
     "checked": false
 }];
 
