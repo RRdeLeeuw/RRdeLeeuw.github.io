@@ -41,7 +41,7 @@
 
     <main>
 
-        <section>
+        <section id="index">
 
             <h2> Welcome on my GitHub page. </h2>
             <p>This page is still under construction. What you are seeing is the very first version that has just been
@@ -59,6 +59,53 @@
 
         </section>
 
+        <section id="calendar">
+            <p>This is a calendar that is rendered by javascript and adjusts
+                automatically for each month selected. To make handling dates in javascript a little easier this
+                calendar makes use of the open
+                source <a href="https://moment.github.io/luxon/">Luxon</a> library.</p>
+            <p>
+                <b>This calendar is not fully functional.</b> The full functionality for this calendar (adding an item,
+                changing an item, the items rendering in the calendar etc.) a database must be connected to store user
+                login data and calendar event data. This is just a static version for demo on GitHub.
+            </p>
+            <section class="calendar">
+                <div class="selectors">
+                    <select class="selector" id="monthselector" onchange="setMonth(this.value)"></select>
+                    <select class="selector" id="yearselector" onchange="setYear(this.value)"></select>
+                </div>
+                <div class="header">
+                    <div class='dayheader'>Monday</div>
+                    <div class='dayheader'>Tuesday</div>
+                    <div class='dayheader'>Wednesday</div>
+                    <div class='dayheader'>Thursday</div>
+                    <div class='dayheader'>Friday</div>
+                    <div class='dayheader'>Saturday</div>
+                    <div class='dayheader'>Sunday</div>
+                </div>
+                <div class='days' id='days'>
+                    <!------ boxes will be inserted here by JS    ------>
+                </div>
+            </section>
+        </section>
+
+        <section id="todolist">
+
+            <h2>Todo-list</h2>
+            <p>
+                This To-Do list was done in a Django webapp, it requires a server side API and database to fully
+                function. The todo-list below roughly functions the same, however no database is connected. Todo's are
+                therefore not stored server side. A refresh will erase all todo's. At the moment it is purely a demo of
+                the Javascript functionality and CSS styling.
+            </p>
+
+            <h2></h2>
+
+            <div id="todolist"></div>
+            <div id="inputfield"></div>
+
+        </section>
+
     </main>
 
     <footer>
@@ -68,6 +115,10 @@
         </section>
     </footer>
 
+
+
+    <script src="scripts/luxon.js"></script>
+    <script src="scripts/javascript.js"></script>
 </body>
 
 </html>
