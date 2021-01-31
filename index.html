@@ -8,6 +8,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" href="stylesheets/calendar.css">
+    <link rel="stylesheet" href="stylesheets/newMenu.css">
     <title>Robin de Leeuw</title>
     <script src="scripts/layout.js"></script>
 </head>
@@ -25,11 +26,11 @@
             Show menu
         </div>
         <div id="menu" class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="addevent.html">Add&nbsp;event</a></li>
-                <li><a href="todolist.html">To-do&nbsp;List</a></li>
+            <ul id="menuLinks">
+                <li id="menuLink1">Home</li>
+                <li id="menuLink2">Calendar</li>
+                <li id="menuLink3">Add&nbsp;event</li>
+                <li id="menuLink4">To-do&nbsp;List</li>
                 <span>
                     <li><a href="/index.html">Login</a></li>
                 </span>
@@ -89,7 +90,7 @@
             </section>
         </section>
 
-        <section id="todolist">
+        <section id="todolistContainer">
 
             <h2>Todo-list</h2>
             <p>
@@ -119,6 +120,9 @@
 
     <script src="scripts/luxon.js"></script>
     <script src="scripts/javascript.js"></script>
+    <script src="scripts/links.js"></script>
+    <script src="scripts/todo.js"></script>
+
 </body>
 
 </html>

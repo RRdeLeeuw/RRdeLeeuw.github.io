@@ -1,0 +1,11 @@
+#calendar {
+    display:none;
+}
+
+#todolist {
+    display:none;
+}
+
+#index {
+    display: block;
+}
