@@ -74,7 +74,7 @@ function add_event(date) {
     var form = document.createElement('form');
     document.body.appendChild(form);
     form.method = 'get';
-    form.action = '/addevent';
+    form.action = '/addevent.html';
     var input = document.createElement('input');
     input.type = 'hidden';
     input.name = 'date';
