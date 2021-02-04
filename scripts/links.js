@@ -43,6 +43,10 @@ const pages = [
     name: "addevent",
     location: document.querySelector("#addevent"),
   },
+  {
+    name: "viewevent",
+    location: document.querySelector("#viewevent"),
+  },
 ];
 
 // Load just the index page:
@@ -90,14 +94,19 @@ footerLink1.addEventListener("click", () => {
 });
 
 // Function to render the requested page
-function setActiveDisplay(pageName) {
-  for (let page of pages) {
-    page.location.style.display = "none";
+function setActiveDisplay(pageName, hideOthersBool = true) {
+  if (hideOthersBool) {
+    for (let page of pages) {
+      page.location.style.display = "none";
+    }
   }
   try {
     pages.filter((page) => page.name === pageName)[0].location.style.display =
       "block";
   } catch {
+    for (let page of pages) {
+      page.location.style.display = "none";
+    }
     pages.filter(
       (page) => page.name === "construction"
     )[0].location.style.display = "block";

@@ -6,6 +6,7 @@ form.addEventListener("submit", (e) => {
 });
 
 addEventCancel.addEventListener("click", (e) => {
+  e.preventDefault();
   e.stopPropagation();
   setActiveDisplay("calendar");
 });
