@@ -596,5 +596,8 @@ footer section h2 {
   margin-top: 0;
   padding-top: 0;
 }
+.innerPopupContainer #viewEventClose {
+  margin-top: 1rem;
+}
 
 /*# sourceMappingURL=stylesheet.css.map */

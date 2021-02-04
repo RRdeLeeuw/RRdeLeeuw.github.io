@@ -4,6 +4,40 @@ globalMonth = currentDate.month;
 globalYear = currentDate.year;
 var globaltest;
 
+const events = [
+  {
+    id: 1,
+    date: currentDate.set({ day: 2 }),
+    time: "11:30",
+    title: "Meeting with John",
+    description: "Meeting up with John to discuss the new client.",
+  },
+  {
+    id: 2,
+    date: currentDate.set({ day: 6 }),
+    time: "09:00",
+    title: "Work event",
+    description:
+      "Major event on new website that is being launched. Break-out rooms with different customers.",
+  },
+  {
+    id: 3,
+    date: currentDate.set({ day: 12 }),
+    time: "10:45",
+    title: "Zoom-call with Joe",
+    description:
+      "Zoom-call with Joe to discuss new projects that we can work on together.",
+  },
+  {
+    id: 4,
+    date: currentDate.set({ day: 17 }),
+    time: "14:30",
+    title: "Coffee with Iris",
+    description:
+      "Just a friendly coffee, we agreed to meet up at that new place around the corner.",
+  },
+];
+
 document.addEventListener("DOMContentLoaded", function () {
   // Render the initial calendar
   renderCalendar(currentDate.month, currentDate.year);
@@ -24,71 +58,37 @@ function setYear(year) {
 
 // function that gets event from api
 function fetchevents(month, year) {
-  fetch("/eventsapi", {
-    method: "POST",
-    body: JSON.stringify({
-      month: month,
-      year: year,
-    }),
-  })
-    .then((response) => response.json())
-    .then((events) => {
-      if (events.hasOwnProperty("message")) {
-        console.log(events.message);
-        return;
-      }
-      events.forEach(function (event) {
-        var day = Number(event.date.slice(8));
-        const element = document.createElement("div");
-        element.setAttribute("class", "calendar_event");
-        element.innerHTML += event["title"];
-        element.addEventListener("click", () => {
-          view_event(event.id);
-        });
-        hover(element, "calendarevent_hover");
-        document.querySelector(`#day${day}`).append(element);
+  events.forEach(function (event) {
+    if (event.date.month === parseInt(globalMonth)) {
+      let day = event.date.day;
+      const element = document.createElement("div");
+      element.setAttribute("class", "calendar_event");
+      element.innerHTML += event["title"];
+      element.addEventListener("click", () => {
+        view_event(event.id);
       });
-    });
-}
-
-function hover(element, classname) {
-  element.addEventListener("mouseenter", (e) =>
-    element.classList.add(classname)
-  );
-  element.addEventListener("mouseleave", (e) =>
-    element.classList.remove(classname)
-  );
+      document.querySelector(`#day${day}`).append(element);
+    }
+  });
 }
 
 // Function for viewing a calendar event
 function view_event(event_id) {
-  var form = document.createElement("form");
-  document.body.appendChild(form);
-  form.method = "post";
-  form.action = "/viewevent";
-  var input = document.createElement("input");
-  input.type = "hidden";
-  input.name = "eventid";
-  input.value = event_id;
-  form.appendChild(input);
-  form.submit();
+  setActiveDisplay("viewevent", false);
+  const event = events.find((element) => element.id === event_id);
+  document.querySelector("#dateField").innerText = event.date.toLocaleString(
+    DateTime.DATETIME_MED
+  );
+  document.querySelector("#timeField").innerText = event.time;
+  document.querySelector("#titleField").innerText = event.title;
+  document.querySelector("#descriptionField").innerText = event.description;
 }
 
 // Deze functie wil ik nog gaan gebruiken om de datum mee te sturen
 // zodat deze gerendered kan worden in de add-event pagina.
 function add_event(date) {
   document.querySelector("#id_date").value = date;
-  setActiveDisplay("addevent");
-  //   var form = document.createElement("form");
-  //   document.body.appendChild(form);
-  //   form.method = "get";
-  //   form.action = "/addevent.html";
-  //   var input = document.createElement("input");
-  //   input.type = "hidden";
-  //   input.name = "date";
-  //   input.value = date;
-  //   form.appendChild(input);
-  //   form.submit();
+  setActiveDisplay("addevent", false);
 }
 
 // Function for rendering the calendar

@@ -106,6 +106,7 @@
           for this calendar (adding an item, changing an item, the items
           rendering in the calendar etc.) a database must be connected to store
           user login data and calendar event data. A demonstration of this functionality will be added later.
+          Therefore the events listed in the calendar are for demonstration only, they are added in reference to today's date.
         <section class="calendar">
           <div class="selectors">
             <select
@@ -148,6 +149,7 @@
           Please keep in mind that you cannot add an event because there is no
           server or database connected.
         </p> -->
+        <h2>Sorry, this function is not completed yet.</h2>
         <h2>Create a new event:</h2>
 
         <div class="addeventform">
@@ -188,6 +190,43 @@
           </form>
         </div>
         </div>
+        </div>
+      </section>
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <!-- VIEW EVENT POPUP -->
+      <!--  -->
+      <!--  -->
+      <!--  -->
+      <section id="viewevent">
+        <div class="blackout" id="blackoutviewEvent">
+          <div class="innerPopupContainer">
+        
+            <h2>Event details:</h2>
+
+            <table>
+              <tr>
+                  <td>Date:</td>
+                  <td id="dateField"></td>
+              </tr>
+              <tr>
+                  <td>Time:</td>
+                  <td id="timeField"></td>
+              </tr>
+              <tr>
+                  <td>Title:</td>
+                  <td id="titleField"></td>
+              </tr>
+              <tr>
+                  <td>Description:</td>
+                  <td id="descriptionField"></td>
+              </tr>
+            </table>
+            <div class="center">
+              <button id="viewEventClose">Close</button>
+            </div>
+          </div>
         </div>
       </section>
       <!--  -->
@@ -289,5 +328,6 @@
     <script src="scripts/todo.js"></script>
     <script src="scripts/hamburgermenu.js"></script>
     <script src="scripts/addevent.js"></script>
+    <script src="scripts/viewevent.js"></script>
   </body>
 </html>
