@@ -2,6 +2,13 @@ const addEventCancel = document.querySelector("#addEventCancel");
 const addEventSubmitButton = document.querySelector("#addEventSubmitButton");
 const form = document.querySelector("#addEventForm");
 
+let dateInput = document.querySelector("#id_date");
+let timeInput = document.querySelector("#timeInput");
+let titleInput = document.querySelector("#titleInput");
+let descriptionInput = document.querySelector("#descriptionInput");
+
+let validedOnce = false;
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
@@ -9,6 +16,18 @@ form.addEventListener("submit", (e) => {
 addEventCancel.addEventListener("click", (e) => {
   e.preventDefault();
   e.stopPropagation();
+  dateInput.value = "";
+  dateInput.classList.remove("invalid");
+  titleInput.value = "";
+  titleInput.classList.remove("invalid");
+  descriptionInput.value = "";
+  descriptionInput.classList.remove("invalid");
+  timeInput.value = "";
+  timeInput.classList.remove("invalid");
+  if (validedOnce) {
+    document.querySelector("#invalidFormDiv").remove();
+  }
+  validedOnce = false;
   setActiveDisplay("calendar");
 });
 
@@ -22,17 +41,7 @@ addEventSubmitButton.addEventListener("click", (e) => {
   e.preventDefault();
   e.stopPropagation();
   let form = document.querySelector("#addEventForm");
-  let dateInput = document.querySelector("#id_date");
-  let timeInput = document.querySelector("#timeInput");
-  let titleInput = document.querySelector("#titleInput");
-  let descriptionInput = document.querySelector("#descriptionInput");
   let date = DateTime.fromISO(dateInput.value);
-  // if (
-  //   dateInput.value !== "" &&
-  //   timeInput.value !== "" &&
-  //   titleInput.value !== "" &&
-  //   descriptionInput.value !== ""
-  // ) {
   events.push(
     new Event(
       idCounter,
@@ -52,9 +61,17 @@ addEventSubmitButton.addEventListener("click", (e) => {
     titleInput.value = "";
     descriptionInput.value = "";
     timeInput.value = "";
+    if (validedOnce) {
+      document.querySelector("#invalidFormDiv").remove();
+    }
+    validedOnce = false;
   } else {
-    console.log("validation failed");
+    if (!validedOnce) {
+      let div = document.createElement("div");
+      div.setAttribute("id", "invalidFormDiv");
+      div.innerText = "Please fill out all fields";
+      addEventSubmitButton.after(div);
+      validedOnce = true;
+    }
   }
-
-  // }
 });
