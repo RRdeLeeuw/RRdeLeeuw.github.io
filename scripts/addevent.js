@@ -21,26 +21,30 @@ document.querySelector("#blackout").addEventListener("click", (e) => {
 addEventSubmitButton.addEventListener("click", (e) => {
   e.preventDefault();
   e.stopPropagation();
+  let form = document.querySelector("#addEventForm");
   let dateInput = document.querySelector("#id_date");
   let timeInput = document.querySelector("#timeInput");
   let titleInput = document.querySelector("#titleInput");
   let descriptionInput = document.querySelector("#descriptionInput");
   let date = DateTime.fromISO(dateInput.value);
-  if (
-    dateInput.value !== "" &&
-    timeInput.value !== "" &&
-    titleInput.value !== "" &&
-    descriptionInput.value !== ""
-  ) {
-    events.push(
-      new Event(
-        idCounter,
-        date,
-        timeInput.value,
-        titleInput.value,
-        descriptionInput.value
-      )
-    );
+  // if (
+  //   dateInput.value !== "" &&
+  //   timeInput.value !== "" &&
+  //   titleInput.value !== "" &&
+  //   descriptionInput.value !== ""
+  // ) {
+  events.push(
+    new Event(
+      idCounter,
+      date,
+      timeInput.value,
+      titleInput.value,
+      descriptionInput.value
+    )
+  );
+  console.log("tot hier werkt het");
+  if (validateForm(form)) {
+    console.log("if runs");
     renderCalendar();
     fetchevents(globalMonth, globalYear);
     setActiveDisplay("calendar");
@@ -48,5 +52,9 @@ addEventSubmitButton.addEventListener("click", (e) => {
     titleInput.value = "";
     descriptionInput.value = "";
     timeInput.value = "";
+  } else {
+    console.log("validation failed");
   }
+
+  // }
 });

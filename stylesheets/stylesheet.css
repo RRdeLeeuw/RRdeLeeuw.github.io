@@ -228,10 +228,16 @@ main section table input {
   border-bottom: 1px solid #464646;
   text-align: right;
 }
+main section table input.invalid {
+  border: 1px solid red;
+}
 main section table textarea {
   border: 1px solid #464646;
   border-radius: 0.3em;
   padding: 0.5em;
+}
+main section table textarea.invalid {
+  border: 1px solid red;
 }
 main section #todolist {
   display: flex;
