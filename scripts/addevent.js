@@ -51,9 +51,7 @@ addEventSubmitButton.addEventListener("click", (e) => {
       descriptionInput.value
     )
   );
-  console.log("tot hier werkt het");
   if (validateForm(form)) {
-    console.log("if runs");
     renderCalendar();
     fetchevents(globalMonth, globalYear);
     setActiveDisplay("calendar");
