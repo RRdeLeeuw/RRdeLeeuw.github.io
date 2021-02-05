@@ -20,13 +20,12 @@
         <a href="/index.html">Login</a>
       </span>
       <img src="/images/leo.svg" alt="" />
-    </header>
+    </header><nav>
 
     <!-- BEGINNING NAVIGATION ELEMENT -->
     <!--  -->
     <!--  -->
     <!--  -->
-    <nav>
       <div id="hamburger-button" class="hamburger-button">Show menu</div>
       <div id="menu" class="menu">
         <ul id="menuLinks" class="menulinks">
@@ -149,7 +148,7 @@
           Please keep in mind that you cannot add an event because there is no
           server or database connected.
         </p> -->
-        <h2>Sorry, this function is not completed yet.</h2>
+        <!-- <h2>Sorry, this function is not completed yet.</h2> -->
         <h2>Create a new event:</h2>
 
         <div class="addeventform">
@@ -170,20 +169,20 @@
               </tr>
               <tr>
                 <td>Select time (hh:mm AM):</td>
-                <td><input type="time" /></td>
+                <td><input type="time" id="timeInput" /></td>
               </tr>
               <tr>
                 <td>Enter a title:</td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="titleInput" /></td>
               </tr>
               <tr>
                 <td id="textlabeltag">Enter a description:</td>
-                <td><textarea cols="40" rows="10"></textarea></td>
+                <td><textarea cols="40" rows="10" id="descriptionInput"></textarea></td>
               </tr>
               <tr>
                 <td colspan="2" class="submit">
                   <button id="addEventCancel">Cancel</button>
-                  <button disabled>Submit</button>
+                  <button id="addEventSubmitButton">Submit</button>
                 </td>
               </tr>
             </table>

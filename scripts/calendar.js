@@ -3,40 +3,56 @@ currentDate = DateTime.local();
 globalMonth = currentDate.month;
 globalYear = currentDate.year;
 var globaltest;
+idCounter = 5;
 
-const events = [
-  {
-    id: 1,
-    date: currentDate.set({ day: 2 }),
-    time: "11:30",
-    title: "Meeting with John",
-    description: "Meeting up with John to discuss the new client.",
-  },
-  {
-    id: 2,
-    date: currentDate.set({ day: 6 }),
-    time: "09:00",
-    title: "Work event",
-    description:
-      "Major event on new website that is being launched. Break-out rooms with different customers.",
-  },
-  {
-    id: 3,
-    date: currentDate.set({ day: 12 }),
-    time: "10:45",
-    title: "Zoom-call with Joe",
-    description:
-      "Zoom-call with Joe to discuss new projects that we can work on together.",
-  },
-  {
-    id: 4,
-    date: currentDate.set({ day: 17 }),
-    time: "14:30",
-    title: "Coffee with Iris",
-    description:
-      "Just a friendly coffee, we agreed to meet up at that new place around the corner.",
-  },
-];
+class Event {
+  constructor(id, date, time, title, description) {
+    this.id = id;
+    this.date = date;
+    this.time = time;
+    this.title = title;
+    this.description = description;
+  }
+}
+
+const events = [];
+
+events.push(
+  new Event(
+    1,
+    currentDate.set({ day: 2 }),
+    "11:30",
+    "Meeting with John",
+    "Meeting up with John to discuss the new client."
+  )
+);
+events.push(
+  new Event(
+    2,
+    currentDate.set({ day: 6 }),
+    "09:00",
+    "Work event",
+    "Major event on new website that is being launched. Break-out rooms with different customers."
+  )
+);
+events.push(
+  new Event(
+    3,
+    currentDate.set({ day: 12 }),
+    "10:45",
+    "Zoom-call with Stef",
+    "Zoom-call with Joe to discuss new projects that we can work on together."
+  )
+);
+events.push(
+  new Event(
+    4,
+    currentDate.set({ day: 17 }),
+    "14:30",
+    "Coffee with Iris",
+    "We agreed to meet up at that new place around the corner."
+  )
+);
 
 document.addEventListener("DOMContentLoaded", function () {
   // Render the initial calendar
@@ -59,7 +75,10 @@ function setYear(year) {
 // function that gets event from api
 function fetchevents(month, year) {
   events.forEach(function (event) {
-    if (event.date.month === parseInt(globalMonth)) {
+    if (
+      event.date.month === parseInt(globalMonth) &&
+      event.date.year === parseInt(globalYear)
+    ) {
       let day = event.date.day;
       const element = document.createElement("div");
       element.setAttribute("class", "calendar_event");
@@ -77,7 +96,7 @@ function view_event(event_id) {
   setActiveDisplay("viewevent", false);
   const event = events.find((element) => element.id === event_id);
   document.querySelector("#dateField").innerText = event.date.toLocaleString(
-    DateTime.DATETIME_MED
+    DateTime.DATE_MED
   );
   document.querySelector("#timeField").innerText = event.time;
   document.querySelector("#titleField").innerText = event.title;
