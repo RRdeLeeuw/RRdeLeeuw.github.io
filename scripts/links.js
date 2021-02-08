@@ -17,60 +17,55 @@ const dropdownLink5 = document.querySelector("#menuDropdown li:nth-of-type(5)");
 // The footer links:
 const footerLink1 = document.querySelector("#footerLink1");
 
-// All pages object:
-const pages = [
-  {
-    name: "index",
-    location: document.querySelector("#index"),
-  },
-  {
-    name: "calendar",
-    location: document.querySelector("#calendar"),
-  },
-  {
-    name: "todolist",
-    location: document.querySelector("#todolistContainer"),
-  },
-  {
-    name: "construction",
-    location: document.querySelector("#construction"),
-  },
-  {
-    name: "credits",
-    location: document.querySelector("#credits"),
-  },
-  {
-    name: "addevent",
-    location: document.querySelector("#addevent"),
-  },
-  {
-    name: "viewevent",
-    location: document.querySelector("#viewevent"),
-  },
-  {
-    name: "formValidation",
-    location: document.querySelector("#formValidation"),
-  },
-];
+async function fetchHtmlAsText(url) {
+  return await (await fetch(url)).text();
+}
 
-// Load just the index page:
-setActiveDisplay("index");
+// this is your `load_home() function`
+async function loadPage(pageName = "construction") {
+  const main = document.getElementById("main");
+  const content = await fetchHtmlAsText(`${pageName}.html`);
+  if (pageName === "viewevent" || pageName === "addevent") {
+    main.innerHTML += content;
+  } else {
+    main.innerHTML = content;
+  }
+  switch (pageName) {
+    case "calendar":
+      renderCalendar();
+      fetchevents();
+      break;
+    case "todolist":
+      loadTodoList();
+      break;
+    case "formvalidation":
+      activateForm();
+      break;
+    case "viewevent":
+      loadViewEventPage();
+      break;
+    case "addevent":
+      loadAddEventForm();
+      break;
+  }
+  return true;
+}
 
 // Adding click event handlers for the menu links
 menuLink1.addEventListener("click", () => {
-  setActiveDisplay("index");
+  loadPage("home");
 });
 
 menuLink2.addEventListener("click", () => {
-  setActiveDisplay("about");
+  loadPage();
 });
 
 menuLink3.addEventListener("click", () => {
-  setActiveDisplay("projects");
+  loadPage();
 });
 
 menuLink4.addEventListener("click", () => {
-  setActiveDisplay("contact");
+  loadPage();
 });
 
 // Create mouseover event for the dropdown menu:
@@ -82,42 +77,22 @@ menuLink3.addEventListener("mouseout", () => {
 });
 
 // Set links for the dropdown menu:
-dropdownLink1.addEventListener("click", (e) => {
+dropdownLink1.addEventListener("click", async (e) => {
   e.stopPropagation();
-  setActiveDisplay("calendar");
+  await loadPage("calendar");
 });
-dropdownLink2.addEventListener("click", (e) => {
+
+dropdownLink2.addEventListener("click", async (e) => {
   e.stopPropagation();
-  setActiveDisplay("todolist");
+  await loadPage("todolist");
 });
-dropdownLink5.addEventListener("click", (e) => {
+
+dropdownLink5.addEventListener("click", async (e) => {
   e.stopPropagation();
-  clearForm();
-  setActiveDisplay("formValidation");
+  await loadPage("formvalidation");
 });
 
 // Footer links
 footerLink1.addEventListener("click", () => {
-  setActiveDisplay("credits");
-  console.log("footer clicked");
+  loadPage("credits");
 });
-
-// Function to render the requested page
-function setActiveDisplay(pageName, hideOthersBool = true) {
-  if (hideOthersBool) {
-    for (let page of pages) {
-      page.location.style.display = "none";
-    }
-  }
-  try {
-    pages.filter((page) => page.name === pageName)[0].location.style.display =
-      "block";
-  } catch {
-    for (let page of pages) {
-      page.location.style.display = "none";
-    }
-    pages.filter(
-      (page) => page.name === "construction"
-    )[0].location.style.display = "block";
-  }
-}
