@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="stylesheets/stylesheet.css" />
     <link rel="stylesheet" href="stylesheets/calendar.css" />
     <link rel="stylesheet" href="stylesheets/hoverlinks.css" />
+    <link rel="stylesheet" href="stylesheets/style.css">
     <title>Robin de Leeuw's Portfolio</title>
   </head>
 
@@ -39,7 +40,7 @@
                 <li>Todo-list</li>
                 <li>Custom selectbox</li>
                 <li>Photo's</li>
-                <li>Project 5</li>
+                <li>Form validation</li>
               </ul>
             </div>
           </li>
@@ -311,7 +312,56 @@
         <!--  -->
         <!--  -->
         <!-- END OF CREDITS PAGE -->
-
+        <!-- BEGINNING OF PASSWORD VALIDATION PAGE-->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <section id="formValidation">
+          <div>
+        <div class="form-field-container">
+          <form action="" id="signup" class="form">
+            <h1>Sign up</h1>
+            <div class="form-field">
+              <label for="username">Username: </label>
+              <input type="text" name="username" id="username" autocomplete="off" />
+              <div></div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email" autocomplete="off" />
+              <div></div>
+            </div>
+            <div class="form-field">
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                autocomplete="off"
+              />
+              <div></div>
+            </div>
+            <div class="form-field">
+              <label for="confirm-password">Confirm password:</label>
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+                autocomplete="off"
+              />
+              <div></div>
+            </div>
+            <div class="form-field button">
+              <button>Sign up</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      </section>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!-- END OF FORM VALIADATION -->
 
     </main>
 
@@ -327,6 +377,7 @@
     <script src="scripts/todo.js"></script>
     <script src="scripts/hamburgermenu.js"></script>
     <script src="scripts/formvalidation.js"></script>
+    <script src="scripts/formvalidation2.js"></script>
     <script src="scripts/addevent.js"></script>
     <script src="scripts/viewevent.js"></script>
   </body>

@@ -54,12 +54,6 @@ events.push(
   )
 );
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Render the initial calendar
-  renderCalendar(currentDate.month, currentDate.year);
-  fetchevents(currentDate.month, currentDate.year);
-});
-
 // Functions to set values from selectboxes
 function setMonth(month) {
   globalMonth = month;
@@ -85,6 +79,7 @@ function fetchevents(month, year) {
       element.innerHTML += event["title"];
       element.addEventListener("click", () => {
         view_event(event.id);
+        console.log("Event id:", event.id);
       });
       document.querySelector(`#day${day}`).append(element);
     }
@@ -92,8 +87,8 @@ function fetchevents(month, year) {
 }
 
 // Function for viewing a calendar event
-function view_event(event_id) {
-  setActiveDisplay("viewevent", false);
+async function view_event(event_id) {
+  await loadPage("viewevent");
   const event = events.find((element) => element.id === event_id);
   document.querySelector("#dateField").innerText = event.date.toLocaleString(
     DateTime.DATE_MED
@@ -105,9 +100,9 @@ function view_event(event_id) {
 
 // Deze functie wil ik nog gaan gebruiken om de datum mee te sturen
 // zodat deze gerendered kan worden in de add-event pagina.
-function add_event(date) {
+async function add_event(date) {
+  await loadPage("addevent");
   document.querySelector("#id_date").value = date;
-  setActiveDisplay("addevent", false);
 }
 
 // Function for rendering the calendar
@@ -229,24 +224,4 @@ function renderCalendar() {
       calendar.append(newday);
     }
   }
-}
-
-function delete_event(eventid) {
-  fetch("/delete_event", {
-    method: "POST",
-    body: JSON.stringify({
-      eventid: eventid,
-    }),
-  })
-    .then((response) => response.json())
-    .then((message) => {
-      if (message.hasOwnProperty("succes")) {
-        console.log(message["succes"]);
-        window.location.replace("/calendar");
-        return;
-      } else if (message.hasOwnProperty("error")) {
-        console.log(message["error"]);
-        return;
-      }
-    });
 }

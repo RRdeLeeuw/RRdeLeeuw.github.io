@@ -1,0 +1,53 @@
+<section id="addevent">
+  <div class="blackout" id="blackout">
+    <div class="innerPopupContainer">
+      <!-- <p>
+      This is how a page for adding an event to the calendar could look.
+      Please keep in mind that you cannot add an event because there is no
+      server or database connected.
+    </p> -->
+      <!-- <h2>Sorry, this function is not completed yet.</h2> -->
+      <h2>Create a new event:</h2>
+
+      <div class="addeventform">
+        <form action="/" method="POST" id="addEventForm">
+          <table>
+            <tr>
+              <td>Select date:</td>
+              <td>
+                <input
+                  type="date"
+                  name="date"
+                  class="input"
+                  required
+                  id="id_date"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Select time (hh:mm AM):</td>
+              <td><input type="time" id="timeInput" /></td>
+            </tr>
+            <tr>
+              <td>Enter a title:</td>
+              <td><input type="text" id="titleInput" placeholder="title" /></td>
+            </tr>
+            <tr>
+              <td id="textlabeltag">Enter a description:</td>
+              <td>
+                <textarea cols="40" rows="10" id="descriptionInput"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="submit">
+                <button id="addEventCancel">Cancel</button>
+                <button id="addEventSubmitButton">Submit</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

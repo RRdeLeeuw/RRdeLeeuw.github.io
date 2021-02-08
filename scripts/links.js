@@ -47,6 +47,10 @@ const pages = [
     name: "viewevent",
     location: document.querySelector("#viewevent"),
   },
+  {
+    name: "formValidation",
+    location: document.querySelector("#formValidation"),
+  },
 ];
 
 // Load just the index page:
@@ -85,6 +89,11 @@ dropdownLink1.addEventListener("click", (e) => {
 dropdownLink2.addEventListener("click", (e) => {
   e.stopPropagation();
   setActiveDisplay("todolist");
+});
+dropdownLink5.addEventListener("click", (e) => {
+  e.stopPropagation();
+  clearForm();
+  setActiveDisplay("formValidation");
 });
 
 // Footer links
